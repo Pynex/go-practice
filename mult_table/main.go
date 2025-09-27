@@ -1,12 +1,27 @@
 package main
 
-import(
+import (
+	"flag"
 	"fmt"
 )
+
 //TODO: 1)modify this code to optional print results
+// 			done!
 //		2)give user option to choose last table element
+//			done!
+
+var res = flag.Bool("res", false, "enable result mode")
+var amount = flag.Int("amount", 10, "choose amount of tables. Default is 9")
+
 func main() {
-	nums := [...]int{2, 3, 4, 5, 6, 7, 8, 9, 10}
+	flag.Parse()
+	*amount++
+
+	nums := make([]int, *amount)
+
+	for i := 2; i < *amount; i++ {
+		nums[i] = i
+	}
 
 	var results []int
 
@@ -27,12 +42,14 @@ func main() {
 
 			results = append(results, res)
 		}
-		
+
 		fmt.Println()
 	}
 
-	fmt.Println("\n\tResults:")
-	for index, result := range results {
-		fmt.Printf("%6d\t%6d\n",index, result)
+	if *res {
+		fmt.Println("\n\tResults:")
+		for index, result := range results {
+			fmt.Printf("%6d\t%6d\n", index, result)
+		}
 	}
 }
