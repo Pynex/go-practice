@@ -13,7 +13,7 @@ func main() {
 		println(i, el)
 	}
 
-	q := [...]int{1,3,4}
+	q := [...]int{1, 3, 4}
 	println(q[2])
 
 	r := [...]byte{9: 'a'}

@@ -11,5 +11,5 @@ func main() {
 	fmt.Println(x)
 
 	y := 5
-	fmt.Println(y+x)
+	fmt.Println(y + x)
 }
