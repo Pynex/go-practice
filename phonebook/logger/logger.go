@@ -9,7 +9,7 @@ import (
 
 var (
 	warnLogger = log.New(os.Stdout, "WARN: ", log.LstdFlags)
-	infoLogger = log.New(os.Stdout, "INFO: ", log.LstdFlags) 
+	infoLogger = log.New(os.Stdout, "INFO: ", log.LstdFlags)
 )
 
 func Info(message string) {
